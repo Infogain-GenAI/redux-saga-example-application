@@ -3,7 +3,7 @@ import {take,all,fork,put,call} from 'redux-saga/effects';
 import fetchSmart from '../fetch';
 function * watchUsername(){
   while(true){
-    const action= yield take('CHANGE_USERNAME');
+    let action= yield take('CHANGE_USERNAME');
     yield put({type:'change_username',value:action.value});
   }
 }
@@ -27,7 +27,6 @@ function * getList(){
 }
 function * watchIsLogin(){
   while(true){
-    //监听登入事件
     const action1=yield take('TO_LOGIN_IN');
     const res=yield call(fetchSmart,'/login',{
       method:'POST',
@@ -36,13 +35,10 @@ function * watchIsLogin(){
         password:action1.password
       })
     });
-    //根据返回的状态码判断登陆是否成功
     if(res.status===10000){
       yield put({type:'to_login_in'});
-      //登陆成功后获取首页的活动列表
       yield fork(getList);
     }
-    //监听登出事件
     const action2=yield take('TO_LOGIN_OUT');
     yield put({type:'to_login_out'});
   }
