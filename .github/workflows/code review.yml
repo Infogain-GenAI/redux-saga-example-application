@@ -17,4 +17,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           openai_api_key: ${{ secrets.OPENAI_API_KEY }}
           model_name: ${{ secrets.MODEL_NAME }}
+          azure_openai_api_key: ${{ secrets.AZURE_OPENAI_API_KEY }}
           exclude_files: '*.json, *.md, *.yml, *.razor'
