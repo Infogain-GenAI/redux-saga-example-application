@@ -11,14 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: Infogain-GenAI/AutoReviewer@master
-        id: AutoReviewer
+      - uses: Infogain-GenAI/ReactReviewer@master
+        id: ReactAutoReviewer
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           openai_api_key: ${{ secrets.OPENAI_API_KEY }}
           model_name: ${{ secrets.MODEL_NAME }}          
           exclude_files: '*.json, *.md, *.yml, *.razor'
-          azure_openai_api_key: ${{ secrets.AZURE_OPENAI_API_KEY }}
-          azure_openai_api_instance_name: ${{ secrets.AZURE_OPENAI_API_INSTANCE_NAME }}
-          azure_openai_api_deployment_name: ${{ secrets.AZURE_OPENAI_API_DEPLOYMENT_NAME }}
-          azure_openai_api_version: ${{ secrets.AZURE_OPENAI_API_VERSION }}
