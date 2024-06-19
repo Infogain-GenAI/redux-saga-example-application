@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: Infogain-GenAI/AutoReviewer@master
-        id: AutoReviewer
+      - uses: Infogain-GenAI/ReactAutoReviewer@master
+        id: ReactAutoReviewer
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           openai_api_key: ${{ secrets.OPENAI_API_KEY }}
