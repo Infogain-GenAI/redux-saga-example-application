@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: Infogain-GenAI/ReactAutoReviewer@master
+      - uses: Infogain-GenAI/PR_Review_Test@master
         id: ReactAutoReviewer
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
