@@ -1,6 +1,11 @@
 name: 'code review'
 on:
-  pull_request:
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: 'Pull Request Number'
+        required: true
+        type: string
 permissions:
   contents: write
   pull-requests: write 
