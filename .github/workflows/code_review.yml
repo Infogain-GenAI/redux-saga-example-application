@@ -1,4 +1,4 @@
-name: 'code review'
+name: 'code_review'
 on:
   workflow_dispatch:
     inputs:
