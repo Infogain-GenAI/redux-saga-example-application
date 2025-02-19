@@ -8,7 +8,7 @@ on:
         type: string
 permissions:
   contents: write
-  pull-requests: write 
+  pull-requests: write
   issues: read
   packages: none
 jobs:
@@ -19,12 +19,12 @@ jobs:
       - uses: Infogain-GenAI/AutoReviewer@master
         id: AutoReviewerTest
         with:
-          ref: refs/pull/${{ inputs.pr_number }}/merge
+          pr_number: ${{ inputs.pr_number }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           openai_api_key: ${{ secrets.OPENAI_API_KEY }}
           azure_openai_api_key: ${{ secrets.AZURE_OPENAI_API_KEY }}
           azure_openai_api_instance_name: ${{ secrets.AZURE_OPENAI_API_INSTANCE_NAME }}
           azure_openai_api_deployment_name: ${{ secrets.AZURE_OPENAI_API_DEPLOYMENT_NAME }}
           azure_openai_api_version: ${{ secrets.AZURE_OPENAI_API_VERSION }}
-          model_name: ${{ secrets.MODEL_NAME }}          
+          model_name: ${{ secrets.MODEL_NAME }}
           exclude_files: '*.json, *.md, *.yml, *.razor'
