@@ -1,7 +1,6 @@
 name: 'code_review'
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
+  workflow_dispatch:
     inputs:
       pr_number:
         description: 'Pull Request Number'
