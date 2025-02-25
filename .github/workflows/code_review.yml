@@ -1,11 +1,6 @@
 name: 'code_review'
 on:
-  workflow_dispatch:
-    inputs:
-      pr_number:
-        description: 'Pull Request Number'
-        required: true
-        type: string
+  pull_request:   
 permissions:
   contents: write
   pull-requests: write
@@ -16,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: Infogain-GenAI/AutoReviewer@master
+      - uses: Infogain-GenAI/Infogain_GAI_PR_Review@main
         id: AutoReviewerTest
         with:
           pr_number: ${{ inputs.pr_number }}
