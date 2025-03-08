@@ -1,14 +1,9 @@
-name: 'code_review'
+name: 'code review'
 on:
-  workflow_dispatch:
-    inputs:
-      pr_number:
-        description: 'Pull Request Number'
-        required: true
-        type: string
+  pull_request:
 permissions:
   contents: write
-  pull-requests: write
+  pull-requests: write 
   issues: read
   packages: none
 jobs:
@@ -16,10 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: Infogain-GenAI/AutoReviewer@master
-        id: AutoReviewerTest
+      - uses: Infogain-GenAI/Infogain_GAI_PR_Review@main
+        id: InfogainPRReview
         with:
-          pr_number: ${{ inputs.pr_number }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           openai_api_key: ${{ secrets.OPENAI_API_KEY }}
           azure_openai_api_key: ${{ secrets.AZURE_OPENAI_API_KEY }}
