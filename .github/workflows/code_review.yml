@@ -19,3 +19,4 @@ jobs:
           model_name: ${{ secrets.MODEL_NAME }}
           exclude_files: '*.json, *.md, *.yml, *.razor'
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          model_temperature: ${{ secrets.MODEL_TEMPERATURE }}
