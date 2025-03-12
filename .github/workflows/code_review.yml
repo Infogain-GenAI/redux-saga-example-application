@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: Infogain-GenAI/Infogain_GAI_PR_Review_Java@master
+      - uses: Infogain-GenAI/Infogain_GAI_PR_Review_Java@main
         id: InfogainPrReviewUsingClaude
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
