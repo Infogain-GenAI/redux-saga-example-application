@@ -1,5 +1,5 @@
 import './index.less';
-import React, { Fragment } from 'react';
+import React,{Fragment} from 'react';
 import Item from '../activityItem/index.js';
 
 export default class ActivityList extends React.Component{
