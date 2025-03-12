@@ -52,4 +52,4 @@ export default class Item extends React.Component{
               </div>
            </Fragment>
   }
-}
+ }
