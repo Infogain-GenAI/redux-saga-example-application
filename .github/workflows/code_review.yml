@@ -11,12 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: Infogain-GenAI/Infogain_GAI_PR_Review@claude
-        id: InfogainPrReviewUsingClaude
+      - uses: Infogain-GenAI/Infogain_GAI_PR_Review@main
+        id: InfogainPrReview
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           openai_api_key: ${{ secrets.OPENAI_API_KEY }}
           model_name: ${{ secrets.MODEL_NAME }}
           exclude_files: '*.json, *.md, *.yml, *.razor'
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          instructions_file_path: ${{ secrets.INSTRUCTIONS_FILE_PATH }}
           model_temperature: ${{ secrets.MODEL_TEMPERATURE }}
