@@ -18,5 +18,4 @@ jobs:
           openai_api_key: ${{ secrets.OPENAI_API_KEY }}
           model_name: ${{ secrets.MODEL_NAME }}
           exclude_files: '*.json, *.md, *.yml, *.razor'
-          instructions_file_path: ${{ secrets.INSTRUCTIONS_FILE_PATH }}
           model_temperature: ${{ secrets.MODEL_TEMPERATURE }}
