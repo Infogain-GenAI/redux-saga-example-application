@@ -1,5 +1,5 @@
 import {totalState }from '../state';
-console.log(totalState);
+
 export default function(state=totalState,action){
    switch (action.type) {
      case 'to_login_in':
@@ -11,7 +11,10 @@ export default function(state=totalState,action){
      case 'change_password':
        return Object.assign({},state,{password:action.value});
      case 'update_list':
-       return Object.assign({},state,{activityList:action.list});
+      {
+        state.activityList = action.list;
+        return state;
+      }
      default:
        return state;
    }
